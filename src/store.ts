@@ -1,12 +1,12 @@
-import { BufferStreamReader, BufferStreamWriter } from "@vigcoin/serializer";
-import { IPeerEntry, uint32, uint64, UINT64, uint8 } from "@vigcoin/types";
+import { BufferStreamReader, BufferStreamWriter } from '@vigcoin/serializer';
+import { IPeerEntry, uint32, uint64, UINT64, uint8 } from '@vigcoin/types';
 import {
   closeSync,
   existsSync,
   openSync,
   readFileSync,
-  writeFileSync
-} from "fs";
+  writeFileSync,
+} from 'fs';
 
 export interface IP2PStorage {
   version: uint8;
@@ -23,7 +23,7 @@ export class Store {
   constructor(file: string) {
     this.file = file;
     if (!existsSync(this.file)) {
-      closeSync(openSync(this.file, "w+"));
+      closeSync(openSync(this.file, 'w+'));
     }
   }
 
@@ -52,9 +52,9 @@ export class Store {
       peers: {
         gray,
         version: peersVersion,
-        white
+        white,
       },
-      version
+      version,
     };
   }
 
@@ -91,10 +91,10 @@ export class Store {
       id,
       peer: {
         ip,
-        port
+        port,
       },
       // tslint:disable-next-line:object-literal-sort-keys
-      lastSeen: new Date(lastSeen * 1000)
+      lastSeen: new Date(lastSeen * 1000),
     };
   }
 }

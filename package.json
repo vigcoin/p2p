@@ -1,7 +1,7 @@
 {
-  "name": "p-2-p",
-  "version": "0.0.0",
-  "description": "p-2-p",
+  "name": "@vigcoin/p2p",
+  "version": "0.1.0",
+  "description": "p2p",
   "license": "MIT",
   "repository": "",
   "author": {
