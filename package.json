@@ -1,6 +1,6 @@
 {
   "name": "@vigcoin/p2p",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "p2p",
   "license": "MIT",
   "repository": "",
@@ -15,16 +15,19 @@
   "files": [
     "lib"
   ],
+  "bin": {
+    "peers": "lib/peers-cli.js"
+  },
   "main": "lib/index",
   "types": "lib/index",
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
     "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
-    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "lint": "tslint --fix --force --format verbose \"src/**/*.ts\"",
     "prepublishOnly": "npm run build",
     "prebuild": "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
     "build": "tsc --pretty",
-    "test": "jest --coverage",
+    "test": "npm run build && jest --coverage",
     "coverage": "jest --coverage",
     "watch": "npm run build -- --watch",
     "watch:test": "jest --watch"
