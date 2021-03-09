@@ -30,7 +30,7 @@ for (const path of pathes) {
 
   console.log('Read peer manager version : ' + ips.peers.version);
   console.log('Read white peers (' + ips.peers.white.length + ')');
-  ips.peers.white.forEach(item => {
+  ips.peers.white.forEach((item) => {
     const ip = IP.toString(item.peer.ip);
     const address = qwry.searchIP(ip);
     console.log(
@@ -51,7 +51,7 @@ for (const path of pathes) {
     console.log('Read P2PServer peer id : ' + ips.id.toString('hex'));
   });
   console.log('Read gray peers (' + ips.peers.gray.length + ')');
-  ips.peers.gray.forEach(item => {
+  ips.peers.gray.forEach((item) => {
     const ip = IP.toString(item.peer.ip);
     const address = qwry.searchIP(ip);
     console.log(
